@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Instructions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Task
 
-## Available Scripts
+The Little Lemon restaurant has decided to remove all desserts with high calories from their menu.
 
-In the project directory, you can run:
+In this lab, you are going to implement a new list component, `DessertsList`, that will display a list of desserts with less than 500 calories, all sorted by calories, from low to high.
 
-### `npm start`
+The data you have to work with has been provided to you inside the App.js file, as an array of objects. Each object represents a dessert and has the following properties: `name`, `calories` and `createdAt`.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The `App` component passes that information to the `DessertsList` component as a prop named `data`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Each item from the list should display the name of the dessert and the number of calories, both separated by a dash character, i.e. `Chocolate Mousse - 250 cal`.
 
-### `npm test`
+**Note:** Before you begin, make sure you understand how to work with the Coursera Code Lab for the [Advanced React course](https://www.coursera.org/learn/advanced-react/supplement/htaLX/working-with-labs-in-this-course).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+If you run npm start and view the app in the browser, you'll notice that the starting React app works as is. The app outputs the below interface with a simple header. You'll build from that starting point.
 
-### `npm run build`
+## Steps
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Step 1**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Open the `DessertsList.js` file.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You’ll see an empty component that at the moment returns `null`, resulting in rendering nothing at all.
 
-### `npm run eject`
+The `DessertsList` component receives a prop called `data`, which is an array containing the list of desserts.
+You can check the exact shape of the data at the top of the `App.js` file, under a variable called `desserts`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### **Step 2**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Open the `DessertsList.js` file. You only need to implement this component to complete this exercise.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Remove the `null` and instead return a `ul` element that contains a list of `li` elements, where each `li` text is a dessert with the following format: `${dessertName} - ${dessertCalories} cal`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The list should be sorted by calories in an ascending manner and any desserts with more than 500 calories should be excluded.
+For that you have to use a combination of `map`, `filter` and `sort` array operators.
 
-## Learn More
+### **Step 3**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Save all the changes and run the app. Preview the updates in the browser, and confirm that the page shows an ul element with just 3 li elements as below:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Ice Cream - 200 cal
+- Tiramisu - 300 cal
+- Chocolate Cake - 400 cal
 
-### Code Splitting
+### **Tip**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you’re having trouble with this lab, please review the `filter` and `sort` methods from arrays in JavaScript.
